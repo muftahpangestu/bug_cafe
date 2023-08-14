@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-require "debug"
+
+require 'debug'
 
 DRINKS = [
   { name: 'コーヒー', price: '300' },
@@ -20,7 +21,7 @@ def take_order(menus)
     puts "(#{i})#{menu[:name]}: #{menu[:price]}円"
   end
   print '>'
-  order_number = (gets.to_i)-1 #indexが０から始まるので、オーダー番号から１引く
+  order_number = gets.to_i - 1 # indexが０から始まるので、オーダー番号から１引く
   puts "#{menus[order_number][:name]}(#{menus[order_number][:price]}円)ですね。"
   order_number
 end
@@ -31,6 +32,6 @@ order1 = take_order(DRINKS)
 puts 'フードメニューはいかがですか?'
 order2 = take_order(FOODS)
 
-total = DRINKS[order1][:price].to_i + FOODS[order2][:price].to_i #integerに変更する, FOODとDRINKSが逆
+total = DRINKS[order1][:price].to_i + FOODS[order2][:price].to_i # integerに変更する, FOODとDRINKSが逆
 
 puts "お会計は#{total}円になります。ありがとうございました！"
